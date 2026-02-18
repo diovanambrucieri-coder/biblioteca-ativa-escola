@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca Univesp</title>
+    <style>
+        body { font-family: sans-serif; background-color: #121212; color: white; padding: 20px; }
+        h1 { color: #ffd700; }
+        .livro-card { background: #1e1e1e; padding: 10px; margin: 10px 0; border-radius: 5px; border-left: 5px solid #ffd700; }
+    </style>
+</head>
+<body>
+    <h1>📚 BiblioQuest</h1>
+    <p>Confira os livros disponíveis no nosso acervo:</p>
+
+    {% for livro in livros %}
+    <div class="livro-card">
+        <strong>{{ livro.titulo }}</strong> <br>
+        <small>Autor: {{ livro.autor }} | Categoria: {{ livro.categoria }}</small>
+    </div>
+    {% else %}
+    <p>Nenhum livro encontrado. Rode o arquivo povoar.py para cadastrar!</p>
+    {% endfor %}
+</body>
+</html>
